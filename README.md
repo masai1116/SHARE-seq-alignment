@@ -14,37 +14,24 @@ Before running, three sections in the main script "Split_seq_example.sh" need to
 A) paths B) sample configuration C) fastq configuration
 
 ## fastq configuration
-Indexed=F # T or F; defaul is F, indicate if the fastq reads are already indexed
-
-Start=Fastq_Merge # Bcl or Fastq_Merge (when fastq were generated per run) or Fastq_SplitLane (when fastq were generated per sequencing lane)
-
-Runtype=full # QC or full;  QC only analyze 12M reads to get a quick sense of data
-
-Sequencer=Novaseq # Novaseq or Nextseq;  miseq or nova-seq has the same sequencing direction, use "Novaseq" for either
+1) Indexed=F # T or F; defaul is F. Indicate if the index reads are already attached to biological reads. Use F, when started with BCL file.
+2) Start=Fastq_Merge # Bcl or Fastq_Merge (when fastq were generated per run) or Fastq_SplitLane (when fastq were generated per sequencing lane)
+3) Runtype=full # QC or full;  QC only analyze 12M reads to get a quick sense of data
+4) Sequencer=Novaseq # Novaseq or Nextseq;  miseq or nova-seq has the same sequencing direction, use "Novaseq" for either
 
 ## sample configuration
-Project=(sp.rna sp.atac.first) # use differnt name for each sample
-
-Type=(RNA ATAC)  # ATAC or RNA
-
-Genomes=(hg19 both) # both mm10 hg19
-
-RawReadsPerBarcode=(10 10) # reads cutoff for the unfiltered bam, use 100 to remove barcode with few reads for “full" run and speed up processing ; use 10 for QC runs
-
-ReadsPerBarcode=(1 1) # reads cutoff for the filtered bam 100 for full run of ATAC and RNA, 1 for QC run \n
-keepMultiMapping=(F F)  # T or F; default is F
+1) Project=(sp.rna sp.atac.first) # use differnt name for each sample
+2) Type=(RNA ATAC)  # ATAC or RNA
+3) Genomes=(hg19 both) # both mm10 hg19
+4) RawReadsPerBarcode=(10 10) # reads cutoff for the unfiltered bam, use 100 to remove barcode with few reads for “full" run and speed up processing ; use 10 for QC runs
+5) ReadsPerBarcode=(1 1) # reads cutoff for the filtered bam 100 for full run of ATAC and RNA, 1 for QC run
+6) keepMultiMapping=(F F)  # T or F; default is F
 
 ## RNA-seq options
 The pipeline also offers flexible RNA-seq specific options for advanced users. 
-
-removeSingelReadUMI=F # T or F; default is F. If T, UMIs with single read will be removed.
-
-keepIntron=T # T or F; default is T. If F, intronic RNA reads will be discarded.
-
-matchPolyT=F # T or F; default is F. If T, will try to find match of TTTTTT (allowing 1 mis-match) in 11-16 bp position of biological read2. If match is not identified, read will be disgarded. Only works if Read2 is longer than 16 bp.
-
-SkipPolyGumi=F # T or F; default is F, pipeline will remove polyG UMIs. If T, pipeline will keep polyG UMIs.
-
-genename=gene_name # gene_name (official gene symbol) or gene_id (ensemble gene name), gene_name is default
-
-refgene=gencode # gencode or genes; gencode is default; genes is UCSC refseq genes; gencode also annotates nc-RNA
+1) removeSingelReadUMI=F # T or F; default is F. If T, UMIs with single read will be removed.
+2) keepIntron=T # T or F; default is T. If F, intronic RNA reads will be discarded.
+3) matchPolyT=F # T or F; default is F. If T, will try to find match of TTTTTT (allowing 1 mis-match) in 11-16 bp position of biological read2. If match is not identified, read will be disgarded. Only works if Read2 is longer than 16 bp.
+4) SkipPolyGumi=F # T or F; default is F, pipeline will remove polyG UMIs. If T, pipeline will keep polyG UMIs.
+5) genename=gene_name # gene_name (official gene symbol) or gene_id (ensemble gene name), gene_name is default
+6) refgene=gencode # gencode or genes; gencode is default; genes is UCSC refseq genes; gencode also annotates nc-RNA
