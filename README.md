@@ -28,13 +28,10 @@ RawReadsPerBarcode and ReadsPerBarcode options are designed to remove barcode wi
 3) Runtype=full # QC or full;  QC only analyze 12M reads to get a quick sense of data
 4) Sequencer=Novaseq # Novaseq or Nextseq;  miseq or nova-seq has the same sequencing direction, use "Novaseq" for either
 
-## sample configuration
-1) Project=(sp.rna sp.atac.first) # use differnt name for each sample
-2) Type=(RNA ATAC)  # ATAC or RNA
-3) Genomes=(hg19 both) # both mm10 hg19
-4) RawReadsPerBarcode=(10 10) # reads cutoff for the unfiltered bam, use 100 to remove barcode with few reads for “full" run and speed up processing ; use 10 for QC runs
-5) ReadsPerBarcode=(1 1) # reads cutoff for the filtered bam 100 for full run of ATAC and RNA, 1 for QC run
-6) keepMultiMapping=(F F)  # T or F; default is F
+## paths
+rawdir=./test_fastq_nova/ # there the raw data is e.g. ~/xxx/201021_SL-NVQ_0277_AHTHLLDRXX/ or ./test_fastq_nova/
+dir=~/test/ # where output data will be stored
+ymal=./config_example.ymal # where the ymal configuration file is
 
 ## RNA-seq options
 The pipeline also offers flexible RNA-seq specific options for advanced users. 
@@ -44,3 +41,14 @@ The pipeline also offers flexible RNA-seq specific options for advanced users.
 4) SkipPolyGumi=F # T or F; default is F, pipeline will remove polyG UMIs. If T, pipeline will keep polyG UMIs.
 5) genename=gene_name # gene_name (official gene symbol) or gene_id (ensemble gene name), gene_name is default
 6) refgene=gencode # gencode or genes; gencode is default; genes is UCSC refseq genes; gencode also annotates nc-RNA
+
+# sample barcode table
+SHARE-seq allows mutiplexing samples in one run.. This alignment pipeline use ymal file to store two levels of sample barcode information, including Round1 hybridization barcode (R1.xx), and PCR barcode (P1.xx). See "config_example.ymal" as an example. 
+
+# Pipeline output
+After successfully running the pipeline, data for each project will be kept in the folder with the same name as the project. 
+Several QC plots will be generated. 
+For ATAC, the most important files are the fragment file (*.rmdup.cutoff.bed.gz) and a summarize report (*.counts.csv.gz).
+For RNA, the most important files are UMIxCell matrix (*.UMIcounts.csv.gz) and a summarize report (*.counts.csv.gz).
+
+This pipeline currently keeps many intermedia files. If preferred, they can be manually removed afterwards.
