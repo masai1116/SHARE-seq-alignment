@@ -13,6 +13,15 @@ A small set of fastq files for testing are in the test_fastq_nova/ folder
 Before running, three sections in the main script "Split_seq_example.sh" need to be updated for each run, inlcuding 
 A) paths B) sample configuration C) fastq configuration
 
+## sample configuration
+1) Project=(sp.rna sp.atac.first) # use differnt name for each sample, the sample 
+2) Type=(RNA ATAC)  # ATAC or RNA
+3) Genomes=(hg19 both) # both mm10 hg19
+RawReadsPerBarcode and ReadsPerBarcode options are designed to remove barcode with few reads and speed up processing. 
+4) RawReadsPerBarcode=(10 10) # reads cutoff for the unfiltered bam file. Recommend to use 100 for full run; 10 for QC run
+5) ReadsPerBarcode=(1 1) # reads cutoff for the filtered bam file. Recommend to use 100 for full run, 1 for QC run
+6) keepMultiMapping=(F F)  # T or F; default is F. Keep or discard multi-mapping reads
+
 ## fastq configuration
 1) Indexed=F # T or F; defaul is F. Indicate if the index reads are already attached to biological reads. Use F, when started with BCL file.
 2) Start=Fastq_Merge # Bcl or Fastq_Merge (when fastq were generated per run) or Fastq_SplitLane (when fastq were generated per sequencing lane)
