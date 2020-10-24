@@ -13,7 +13,17 @@ A small set of fastq files for testing are in the test_fastq_nova/ folder
 Before running, three sections in the main script "Split_seq_example.sh" need to be updated for each run, inlcuding 
 A) paths B) sample configuration C) fastq configuration
 
-The pipeline also offers flexible RNA-seq specific options for advanced users. D) RNA-seq options
+## fastq configuration
+Indexed=F # T or F; defaul is F, indicate if the fastq reads are already indexed
+
+Start=Fastq_Merge # Bcl or Fastq_Merge (when fastq were generated per run) or Fastq_SplitLane (when fastq were generated per sequencing lane)
+
+Runtype=full # QC or full;  QC only analyze 12M reads to get a quick sense of data
+
+Sequencer=Novaseq # Novaseq or Nextseq;  miseq or nova-seq has the same sequencing direction, use "Novaseq" for either
+
+## RNA-seq options
+The pipeline also offers flexible RNA-seq specific options for advanced users. 
 
 removeSingelReadUMI=F # T or F; default is F. If T, UMIs with single read will be removed.
 
@@ -26,10 +36,3 @@ SkipPolyGumi=F # T or F; default is F, pipeline will remove polyG UMIs. If T, pi
 genename=gene_name # gene_name (official gene symbol) or gene_id (ensemble gene name), gene_name is default
 
 refgene=gencode # gencode or genes; gencode is default; genes is UCSC refseq genes; gencode also annotates nc-RNA
-
-## fastq configuration
-Indexed=F # T or F; defaul is F, indicate if the fastq reads are already indexed
-Start=Fastq_Merge # Bcl or Fastq_Merge (when fastq were generated per run) or Fastq_SplitLane (when fastq were generated per sequencing lane)
-Runtype=full # QC or full;  QC only analyze 12M reads to get a quick sense of data
-Sequencer=Novaseq # Novaseq or Nextseq;  miseq or nova-seq should use "Novaseq"
-
