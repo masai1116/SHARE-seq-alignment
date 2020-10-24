@@ -1,0 +1,30 @@
+---
+Project1:
+    Name: sp.atac.first
+    Primer:
+        - P1.01
+        - P1.02
+    Round1:
+        - R1.05
+        - R1.13
+        - R1.21
+        - R1.29
+        - R1.37
+        - R1.45
+        - R1.53
+Project2:
+    Name: sp.rna
+    Primer:
+        - P1.17
+        - P1.18
+    Round1:
+        - R1.01
+        - R1.02
+        - R1.03
+        - R1.04
+        - R1.05
+        - R1.06
+        - R1.07
+        - R1.08
+        - R1.09
+...
