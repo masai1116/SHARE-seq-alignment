@@ -2,9 +2,9 @@
 Pipeline for demultiplex and align both ATAC and RNA data generated in SHARE-seq
 
 # Installation
-Dependencies: GNU parallel, Bcl2fastq, fastp, zcat, STAR, bowtie2, python2, umi_tools, samtools, picard, R, featureCounts, read_distribution.py from RSeQC, bedtools
+This pipeline requires these packages to be propoerly installed: GNU parallel, Bcl2fastq, fastp, zcat, STAR, bowtie2, python2, umi_tools, samtools, picard, R, featureCounts, read_distribution.py from RSeQC, bedtools
 
-The SHARE-seq-alignment scripts can be directly downloaded from the github website.
+The SHARE-seq-alignment scripts can be directly downloaded from the github website.\
 [https://github.com/masai1116/SHARE-seq-alignment/](https://github.com/masai1116/SHARE-seq-alignment/)
 
 After downloading all scripts, update the general configuration section in main script "Split_seq_example.sh":
