@@ -25,7 +25,7 @@ The index file for hg19-mm10 combined genome can be downloaded from [10x Genomic
 # How to run the script?
 A small set of fastq files for testing are in the test_fastq_nova/ folder
 Before running, three sections in the main script "Split_seq_example.sh" need to be updated for each run, inlcuding 
-A) paths B) sample configuration C) fastq configuration. After update all specific information in Split_seq_example.sh and config_example.ymal, run by the script by "./Split_seq_example.sh" 
+A) paths B) sample configuration C) fastq configuration. After update all specific information in Split_seq_example.sh and config_example.ymal, run by the script by ```./Split_seq_example.sh```
 
 ## A) paths
 1) rawdir=./test_fastq_nova/ # there the raw data is
@@ -54,10 +54,10 @@ The pipeline also offers flexible RNA-seq specific options for advanced users.
 3) matchPolyT=F # T or F; default is F. If T, will try to find TTTTTT (allowing 1 mis-match) in 11-16 bp position of biological read2. If TTTTTT is not identified, read will be disgarded. Only works if Read2 is longer than 16 bp.
 4) SkipPolyGumi=F # T or F; default is F, pipeline will remove polyG UMIs. If T, pipeline will keep polyG UMIs.
 5) genename=gene_name # gene_name (official gene symbol) or gene_id (ensemble gene name), gene_name is default
-6) refgene=gencode # gencode or genes; gencode is default; genes is UCSC refseq genes; gencode also annotates nc-RNA
+6) refgene=gencode # gencode or genes; gencode is default; genes is UCSC refseq genes; gencode also indcludes nc-RNA
 
 # Sample barcode table
-SHARE-seq allows mutiplexing samples in one run. We use ymal file to store two levels of sample barcode information, including Round1 hybridization barcode (R1.xx), and PCR barcode (P1.xx). See "config_example.ymal" as an example. This file needs to be updated for each sample and each sequencing run.
+SHARE-seq allows mutiplexing samples in one run. We use ymal file to store two levels of sample barcode information, including Round1 hybridization barcode (R1.xx), and PCR barcode (P1.xx). See ```config_example.ymal``` as an example. This file needs to be updated for each sample and each sequencing run.
 ```
 Project1:
     Name: sp.atac.first
