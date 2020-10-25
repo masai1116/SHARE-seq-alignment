@@ -15,10 +15,10 @@ After downloading all scripts, update the general configuration section in main 
 
 The pipeline also requres gtf files and index files for aligners to be download and unziped into the right location.\
 GTF files can be downloaded [here](https://drive.google.com/file/d/1HuGLf0vSHO58Ek5HibTRiwXWBn9fBMTz/view?usp=sharing).\
-Index files for bowtie2 can be downloaded [here](https://drive.google.com/file/d/1UnHCIMUffU2_WZCl42GDfLpjBTQxcE_j/view?usp=sharing).\
+Index files for bowtie2 can be downloaded [here](https://drive.google.com/file/d/1bXIxznwirsZ6DZhqK1gw6ZKlj-UjFRhn/view?usp=sharing).\
 Assuming SHARE-seq aligment scripts are here "/home/Scripts/", the gtf files should be placed in the "/home/Scripts/gtf" folder.\
 The bowtie2 index files should be placed in the "/home/Scripts/refGenome/bowtie2" folder.\
-Three sets of index files (hg19, mm10 and hg19-mm10 combined genome) for star aligner should be prepared according to star aligner [manual](https://github.com/alexdobin/STAR).  
+Three sets of index files (hg19, mm10 and hg19-mm10 combined genome) for star aligner should be prepared according to star aligner [manual](https://github.com/alexdobin/STAR), or downloded from here: [hg19](), [mm10](), [combined genome]().
 The index files should be unziped and placed in the "/home/Scripts/refGenome/star/hg19", "/home/Scripts/refGenome/star/mm10", and "/home/Scripts/refGenome/star/both", respectively.
 The index file for hg19-mm10 combined genome can be downloaded from [10x Genomics website](https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest).
 
