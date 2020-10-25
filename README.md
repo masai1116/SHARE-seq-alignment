@@ -1,6 +1,6 @@
 # SHARE-seq-alignment
-Pipeline for demultiplex and align both ATAC and RNA data generated in SHARE-seq
-Author: Sai Ma. sai@broadinstitute.org
+Pipeline for demultiplex and align both ATAC and RNA data generated in SHARE-seq\
+**Author: Sai Ma. sai@broadinstitute.org**
 
 # Installation
 This pipeline requires these packages to be propoerly installed: GNU parallel, Bcl2fastq, fastp, zcat, STAR, bowtie2, python2, umi_tools, samtools, picard, R, featureCounts, read_distribution.py from RSeQC, bedtools
