@@ -1,5 +1,6 @@
 # SHARE-seq-alignment
 Pipeline for demultiplex and align both ATAC and RNA data generated in SHARE-seq
+Author: Sai Ma. sai@broadinstitute.org
 
 # Installation
 This pipeline requires these packages to be propoerly installed: GNU parallel, Bcl2fastq, fastp, zcat, STAR, bowtie2, python2, umi_tools, samtools, picard, R, featureCounts, read_distribution.py from RSeQC, bedtools
@@ -26,7 +27,12 @@ A small set of fastq files for testing are in the test_fastq_nova/ folder
 Before running, three sections in the main script "Split_seq_example.sh" need to be updated for each run, inlcuding 
 A) paths B) sample configuration C) fastq configuration
 
-## sample configuration
+## A) paths
+1) rawdir=./test_fastq_nova/ # there the raw data is\
+2) dir=~/test/ # where output data will be stored\
+3) ymal=./config_example.ymal # where the ymal configuration file is\
+
+## B) sample configuration
 1) Project=(sp.rna sp.atac.first) # use differnt name for each sample, the sample 
 2) Type=(RNA ATAC)  # ATAC or RNA
 3) Genomes=(hg19 both) # both mm10 hg19
@@ -35,16 +41,11 @@ RawReadsPerBarcode and ReadsPerBarcode options are designed to remove barcode wi
 5) ReadsPerBarcode=(1 1) # reads cutoff for the filtered bam file. Recommend to use 100 for full run, 1 for QC run
 6) keepMultiMapping=(F F)  # T or F; default is F. Keep or discard multi-mapping reads
 
-## fastq configuration
+## C) fastq configuration
 1) Indexed=F # T or F; defaul is F. Indicate if the index reads are already attached to biological reads. Use F, when started with BCL file.
 2) Start=Fastq_Merge # Bcl or Fastq_Merge (when fastq were generated per run) or Fastq_SplitLane (when fastq were generated per sequencing lane)
 3) Runtype=full # QC or full;  QC only analyze 12M reads to get a quick sense of data
 4) Sequencer=Novaseq # Novaseq or Nextseq;  miseq or nova-seq has the same sequencing direction, use "Novaseq" for either
-
-## paths
-rawdir=./test_fastq_nova/ # there the raw data is
-dir=~/test/ # where output data will be stored
-ymal=./config_example.ymal # where the ymal configuration file is
 
 ## RNA-seq options
 The pipeline also offers flexible RNA-seq specific options for advanced users. 
