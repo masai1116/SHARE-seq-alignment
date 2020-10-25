@@ -12,8 +12,8 @@ After downloading all scripts, update the general configuration section in main 
 2) pythohPATH # change it to where python2 is installed e.g. pythohPATH='/usr/bin/python' 
 3) picardPATH # change it to where picard is installed e.g. picardPATH='/mnt/bin/picard/picard.jar'
 
-The pipeline also requres reference genome and gtf files to be download and unziped into the right location.
-GTF files can be downloaded [here](https://drive.google.com/file/d/1UnHCIMUffU2_WZCl42GDfLpjBTQxcE_j/view?usp=sharing).
+The pipeline also requres reference genome and gtf files to be download and unziped into the right location.\
+GTF files can be downloaded [here](https://drive.google.com/file/d/1UnHCIMUffU2_WZCl42GDfLpjBTQxcE_j/view?usp=sharing).\
 Assuming SHARE-seq aligment scripts are here "/home/Scripts/", The gtf files should be placed in the "/home/Scripts/gtf" folder.
 
 # How to run the script?
@@ -55,10 +55,9 @@ SHARE-seq allows mutiplexing samples in one run.. This alignment pipeline use ym
 
 # Pipeline output
 After successfully running the pipeline, data for each project will be kept in the folder with the same name as the project. 
-Several QC plots will be generated. 
-For ATAC, the most important files are the fragment file after removing duplicates and mito reads (*.rmdup.cutoff.bed.gz) and a summarize report (*.counts.csv.gz).
-For RNA, the most important files are UMIxCell matrix (*.UMIcounts.csv.gz) and a summarize report (*.counts.csv.gz).
-
+Several QC plots will be generated.\
+For ATAC, the most important files are the fragment file after removing duplicates and mito reads (*.rmdup.cutoff.bed.gz) and a summarize report (*.counts.csv.gz).\
+For RNA, the most important files are UMIxCell matrix (*.UMIcounts.csv.gz) and a summarize report (*.counts.csv.gz).\
 This pipeline currently keeps many intermedia files. If preferred, they can be manually removed afterwards.
 
 # Cite us
