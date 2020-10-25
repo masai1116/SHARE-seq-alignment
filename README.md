@@ -28,9 +28,9 @@ Before running, three sections in the main script "Split_seq_example.sh" need to
 A) paths B) sample configuration C) fastq configuration. After update all specific information in Split_seq_example.sh and config_example.ymal, run by the script by "./Split_seq_example.sh" 
 
 ## A) paths
-1) rawdir=./test_fastq_nova/ # there the raw data is\
-2) dir=~/test/ # where output data will be stored\
-3) ymal=./config_example.ymal # where the ymal configuration file is\
+1) rawdir=./test_fastq_nova/ # there the raw data is
+2) dir=~/test/ # where output data will be stored
+3) ymal=./config_example.ymal # where the ymal configuration file is
 
 ## B) sample configuration
 1) Project=(sp.rna sp.atac.first) # use differnt name for each sample, the sample 
