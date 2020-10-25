@@ -25,7 +25,7 @@ The index file for hg19-mm10 combined genome can be downloaded from [10x Genomic
 # How to run the script?
 A small set of fastq files for testing are in the test_fastq_nova/ folder
 Before running, three sections in the main script "Split_seq_example.sh" need to be updated for each run, inlcuding 
-A) paths B) sample configuration C) fastq configuration
+A) paths B) sample configuration C) fastq configuration. After update all specific information in Split_seq_example.sh and config_example.ymal, run by the script by "./Split_seq_example.sh" 
 
 ## A) paths
 1) rawdir=./test_fastq_nova/ # there the raw data is\
@@ -57,7 +57,10 @@ The pipeline also offers flexible RNA-seq specific options for advanced users.
 6) refgene=gencode # gencode or genes; gencode is default; genes is UCSC refseq genes; gencode also annotates nc-RNA
 
 # Sample barcode table
-SHARE-seq allows mutiplexing samples in one run.. This alignment pipeline use ymal file to store two levels of sample barcode information, including Round1 hybridization barcode (R1.xx), and PCR barcode (P1.xx). See "config_example.ymal" as an example. 
+SHARE-seq allows mutiplexing samples in one run. We use ymal file to store two levels of sample barcode information, including Round1 hybridization barcode (R1.xx), and PCR barcode (P1.xx). See "config_example.ymal" as an example. This file needs to be updated for each sample and each sequencing run.\
+R1.xx can be R1.01, R1.02, ..., R1.96.\
+P1.xx can be P1.01, P1.02, ..., P1.96.\
+The detialed information about these barcode can be found in [SHARE-seq manuscript](https://www.sciencedirect.com/science/article/pii/S0092867420312538).
 
 # Pipeline output
 After successfully running the pipeline, data for each project will be kept in the folder with the same name as the project. 
