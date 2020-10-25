@@ -58,6 +58,18 @@ The pipeline also offers flexible RNA-seq specific options for advanced users.
 
 # Sample barcode table
 SHARE-seq allows mutiplexing samples in one run. We use ymal file to store two levels of sample barcode information, including Round1 hybridization barcode (R1.xx), and PCR barcode (P1.xx). See "config_example.ymal" as an example. This file needs to be updated for each sample and each sequencing run.\
+```
+Project1:
+    Name: sp.atac.first
+    Primer:
+        - P1.01
+        - P1.02
+    Round1:
+        - R1.05
+        - R1.13
+        - R1.21
+        - R1.29
+```        
 R1.xx can be R1.01, R1.02, ..., R1.96.\
 P1.xx can be P1.01, P1.02, ..., P1.96.\
 The detialed information about these barcode can be found in [SHARE-seq manuscript](https://www.sciencedirect.com/science/article/pii/S0092867420312538).
