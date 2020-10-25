@@ -8,7 +8,7 @@ This pipeline requires these packages to be propoerly installed: GNU parallel, B
 The SHARE-seq-alignment scripts can be directly downloaded from the github website.\
 [https://github.com/masai1116/SHARE-seq-alignment/](https://github.com/masai1116/SHARE-seq-alignment/)
 
-After downloading all scripts, update the general configuration section in main script "Split_seq_example.sh":
+After downloading all scripts, update the general configuration section in main script "Split_seq_example.sh" as following:\
 1) myPATH # change it to where the SHARE-seq scripts are installed. e.g. myPATH='/mnt/users/Script/share-seq-github-v1/'
 2) pythohPATH # change it to where python2 is installed e.g. pythohPATH='/usr/bin/python' 
 3) picardPATH # change it to where picard is installed e.g. picardPATH='/mnt/bin/picard/picard.jar'
