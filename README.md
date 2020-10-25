@@ -57,7 +57,7 @@ The pipeline also offers flexible RNA-seq specific options for advanced users.
 6) refgene=gencode # gencode or genes; gencode is default; genes is UCSC refseq genes; gencode also annotates nc-RNA
 
 # Sample barcode table
-SHARE-seq allows mutiplexing samples in one run. We use ymal file to store two levels of sample barcode information, including Round1 hybridization barcode (R1.xx), and PCR barcode (P1.xx). See "config_example.ymal" as an example. This file needs to be updated for each sample and each sequencing run.\
+SHARE-seq allows mutiplexing samples in one run. We use ymal file to store two levels of sample barcode information, including Round1 hybridization barcode (R1.xx), and PCR barcode (P1.xx). See "config_example.ymal" as an example. This file needs to be updated for each sample and each sequencing run.
 ```
 Project1:
     Name: sp.atac.first
