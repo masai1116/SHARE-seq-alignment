@@ -29,7 +29,7 @@ RawReadsPerBarcode and ReadsPerBarcode options are designed to remove barcode wi
 4) Sequencer=Novaseq # Novaseq or Nextseq;  miseq or nova-seq has the same sequencing direction, use "Novaseq" for either
 
 ## paths
-rawdir=./test_fastq_nova/ # there the raw data is e.g. "~/xxx/201021_SL-NVQ_0277_AHTHLLDRXX/" or "./test_fastq_nova/"
+rawdir=./test_fastq_nova/ # there the raw data is
 dir=~/test/ # where output data will be stored
 ymal=./config_example.ymal # where the ymal configuration file is
 
