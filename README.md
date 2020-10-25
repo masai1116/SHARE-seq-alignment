@@ -12,9 +12,14 @@ After downloading all scripts, update the general configuration section in main 
 2) pythohPATH # change it to where python2 is installed e.g. pythohPATH='/usr/bin/python' 
 3) picardPATH # change it to where picard is installed e.g. picardPATH='/mnt/bin/picard/picard.jar'
 
-The pipeline also requres reference genome and gtf files to be download and unziped into the right location.\
-GTF files can be downloaded [here](https://drive.google.com/file/d/1UnHCIMUffU2_WZCl42GDfLpjBTQxcE_j/view?usp=sharing).\
-Assuming SHARE-seq aligment scripts are here "/home/Scripts/", The gtf files should be placed in the "/home/Scripts/gtf" folder.
+The pipeline also requres gtf files and index files for aligners to be download and unziped into the right location.\
+GTF files can be downloaded [here](https://drive.google.com/file/d/1HuGLf0vSHO58Ek5HibTRiwXWBn9fBMTz/view?usp=sharing).\
+Index files for bowtie2 can be downloaded [here](https://drive.google.com/file/d/1UnHCIMUffU2_WZCl42GDfLpjBTQxcE_j/view?usp=sharing).\
+Assuming SHARE-seq aligment scripts are here "/home/Scripts/", the gtf files should be placed in the "/home/Scripts/gtf" folder.\
+The bowtie2 index files should be placed in the "/home/Scripts/refGenome/bowtie2" folder.\
+Three sets of index files (hg19, mm10 and hg19-mm10 combined genome) for star aligner should be prepared according to star aligner [manual](https://github.com/alexdobin/STAR).  
+The index files should be unziped and placed in the "/home/Scripts/refGenome/star/hg19", "/home/Scripts/refGenome/star/mm10", and "/home/Scripts/refGenome/star/both", respectively.
+The index file for hg19-mm10 combined genome can be downloaded from [10x Genomics website](https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest).
 
 # How to run the script?
 A small set of fastq files for testing are in the test_fastq_nova/ folder
