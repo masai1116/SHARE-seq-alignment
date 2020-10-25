@@ -8,6 +8,10 @@ After installing, update the general configuration section in main script "Split
 2) pythohPATH # change it to where python2 is installed e.g. pythohPATH='/usr/bin/python' 
 3) picardPATH # change it to where picard is installed e.g. picardPATH='/mnt/bin/picard/picard.jar'
 
+The pipeline also requres reference genome and gtf files to be download and unziped into the right location.
+GTF files can be downloaded [here] (https://drive.google.com/file/d/1UnHCIMUffU2_WZCl42GDfLpjBTQxcE_j/view?usp=sharing).
+Assuming SHARE-seq aligment scripts are here "~/temp", The gtf files should be placed in the "~/temp/gtf" folder.
+
 # How to run the script?
 A small set of fastq files for testing are in the test_fastq_nova/ folder
 Before running, three sections in the main script "Split_seq_example.sh" need to be updated for each run, inlcuding 
