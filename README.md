@@ -52,3 +52,6 @@ For ATAC, the most important files are the fragment file after removing duplicat
 For RNA, the most important files are UMIxCell matrix (*.UMIcounts.csv.gz) and a summarize report (*.counts.csv.gz).
 
 This pipeline currently keeps many intermedia files. If preferred, they can be manually removed afterwards.
+
+# Cite us
+Ma et al. Cell 2020 Chromatin Potential Identified by Shared Single-Cell Profiling of RNA and Chromatin [https://www.sciencedirect.com/science/article/pii/S0092867420312538]
