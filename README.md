@@ -1,25 +1,25 @@
-# SHARE-seq-alignment
-Pipeline for demultiplex and align both ATAC and RNA data generated in SHARE-seq\
+# SHARE-seq-alignment v1.0
+Pipeline for demultiplexing and aligning both ATAC and RNA data generated in SHARE-seq\
 **Author: Sai Ma. sai@broadinstitute.org**
 
 # Installation
-This pipeline requires these packages to be propoerly installed: GNU parallel, Bcl2fastq, fastp, zcat, STAR, bowtie2, python2, umi_tools, samtools, picard, R, featureCounts, read_distribution.py from RSeQC, bedtools
+This pipeline requires following packages to be properly installed and added to system path: GNU parallel, Bcl2fastq, fastp, zcat, STAR, bowtie2, python2, umi_tools, samtools, picard, R, featureCounts, read_distribution.py from RSeQC, bedtools
 
 The SHARE-seq-alignment scripts can be directly downloaded from the github website.\
 [https://github.com/masai1116/SHARE-seq-alignment/](https://github.com/masai1116/SHARE-seq-alignment/)
 
-After downloading all scripts, update the general configuration section in main script "Split_seq_example.sh" as following:
-1) myPATH # change it to where the SHARE-seq scripts are installed. e.g. myPATH='/mnt/users/Script/share-seq-github-v1/'
-2) pythohPATH # change it to where python2 is installed e.g. pythohPATH='/usr/bin/python' 
-3) picardPATH # change it to where picard is installed e.g. picardPATH='/mnt/bin/picard/picard.jar'
+After downloading all scripts, update the general configuration section in main script "Split_seq_example.sh":
+1) myPATH # where the SHARE-seq scripts are installed. e.g. myPATH='/mnt/users/Script/share-seq-github-v1/'
+2) pythohPATH # where python2 is installed e.g. pythohPATH='/usr/bin/python' 
+3) picardPATH # where picard is installed e.g. picardPATH='/mnt/bin/picard/picard.jar'
 
-The pipeline also requres gtf files and index files for aligners to be download and unziped into the right location.\
+The pipeline also requres gtf files and aligner index files to be download and unziped into the right location.\
 GTF files can be downloaded [here](https://drive.google.com/file/d/1HuGLf0vSHO58Ek5HibTRiwXWBn9fBMTz/view?usp=sharing).\
-Index files for bowtie2 can be downloaded [here](https://drive.google.com/file/d/1bXIxznwirsZ6DZhqK1gw6ZKlj-UjFRhn/view?usp=sharing).\
-Assuming SHARE-seq aligment scripts are here "/home/Scripts/", the gtf files should be placed in the "/home/Scripts/gtf" folder.\
-The bowtie2 index files should be placed in the "/home/Scripts/refGenome/bowtie2" folder.\
+Bowtie2 index files (Hg19 and mm10) can be downloaded [here](https://drive.google.com/file/d/1bXIxznwirsZ6DZhqK1gw6ZKlj-UjFRhn/view?usp=sharing).\
+Assuming SHARE-seq aligment scripts are installed to "/home/SHARE-seq-alignment/", the gtf files should be placed in the "/home/SHARE-seq-alignment/gtf" folder.\
+The bowtie2 index files should be placed in the "/home/SHARE-seq-alignment/refGenome/bowtie2" folder.\
 Three sets of index files (hg19, mm10 and hg19-mm10 combined genome) for star aligner should be prepared according to star aligner [manual](https://github.com/alexdobin/STAR), or downloded from here: [hg19](), [mm10](), [combined genome]().\
-The unziped index files should be placed in the "/home/Scripts/refGenome/star/hg19", "/home/Scripts/refGenome/star/mm10", and "/home/Scripts/refGenome/star/both", respectively.\
+The unziped index files should be placed in the "/home/SHARE-seq-alignment/refGenome/star/hg19", "/home/SHARE-seq-alignment/refGenome/star/mm10", and "/home/SHARE-seq-alignment/refGenome/star/both", respectively.\
 The index file for hg19-mm10 combined genome can be downloaded from [10x Genomics website](https://support.10xgenomics.com/single-cell-gene-expression/software/downloads/latest).
 
 # How to run the script?
@@ -51,7 +51,7 @@ RawReadsPerBarcode and ReadsPerBarcode options are designed to remove barcode wi
 The pipeline also offers flexible RNA-seq specific options for advanced users. 
 1) removeSingelReadUMI=F # T or F; default is F. If T, UMIs with single read will be removed.
 2) keepIntron=T # T or F; default is T. If F, intronic RNA reads will be discarded.
-3) matchPolyT=F # T or F; default is F. If T, will try to find match of TTTTTT (allowing 1 mis-match) in 11-16 bp position of biological read2. If match is not identified, read will be disgarded. Only works if Read2 is longer than 16 bp.
+3) matchPolyT=F # T or F; default is F. If T, will try to find TTTTTT (allowing 1 mis-match) in 11-16 bp position of biological read2. If TTTTTT is not identified, read will be disgarded. Only works if Read2 is longer than 16 bp.
 4) SkipPolyGumi=F # T or F; default is F, pipeline will remove polyG UMIs. If T, pipeline will keep polyG UMIs.
 5) genename=gene_name # gene_name (official gene symbol) or gene_id (ensemble gene name), gene_name is default
 6) refgene=gencode # gencode or genes; gencode is default; genes is UCSC refseq genes; gencode also annotates nc-RNA
