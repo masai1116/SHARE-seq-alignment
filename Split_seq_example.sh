@@ -823,9 +823,6 @@ for Name in ${Project[@]}; do
     index=$((index + 1))
 done
 
-
-
-rm $dir/Useful/*filtered.counts.csv 
 rm $dir/filesr1.xls $dir/filesr2.xls $dir/filesi1.xls $dir/filesi2.xls
 rm -r $dir/temp/
 
