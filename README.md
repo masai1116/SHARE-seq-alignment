@@ -34,7 +34,7 @@ A) paths B) sample configuration C) fastq configuration. After update all specif
 ## B) sample configuration
 1) Project=(sp.rna sp.atac.first) # use differnt name for each sample 
 2) Type=(RNA ATAC)  # ATAC or RNA
-3) Genomes=(hg19 both) # both mm10 hg19
+3) Genomes=(hg19 both) # both mm10 hg19 \
 RawReadsPerBarcode and ReadsPerBarcode options are designed to remove barcodes with too few reads and speed up processing. 
 4) RawReadsPerBarcode=(10 10) # reads cutoff for the unfiltered bam file. Recommend to use 100 for full run; 10 for QC run
 5) ReadsPerBarcode=(1 1) # reads cutoff for the filtered bam file. Recommend to use 100 for full run, 1 for QC run
