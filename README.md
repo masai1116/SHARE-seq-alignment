@@ -82,7 +82,7 @@ For ATAC, the most important files are the fragment file after removing duplicat
 For RNA, the most important files are UMIxCell matrix (.UMIcounts.csv.gz) and a summarize report (.counts.csv.gz).\
 This pipeline currently keeps many intermedia files. If preferred, they can be manually removed afterwards.
 
-# Important note:
+# Important note
 The ATAC and RNA barcodes would in the format of R1.xx,R2.xx,R3.xx,P1.xx, where xx is in the range of 01-96.
 The P1.xx indicates the primers that were used to amplify each ATAC and RNA sub-libraries. It is expected to be different between RNA and ATAC assay. The rest part of barcode (R1.xx,R2.xx,R3.xx) would be the same for ATAC and RNA library.
 A barcode translation table indicating the P1.xx used in the assay would be beneficial.
