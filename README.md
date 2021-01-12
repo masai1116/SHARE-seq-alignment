@@ -2,6 +2,12 @@
 Pipeline for demultiplexing and aligning both ATAC and RNA data generated in SHARE-seq\
 **Author: Sai Ma. sai@broadinstitute.org**
 
+# Important note
+The ATAC and RNA barcodes would in the format of R1.xx,R2.xx,R3.xx,P1.xx, where xx is in the range of 01-96.
+The P1.xx indicates the primers that were used to amplify each ATAC and RNA sub-libraries. It is expected to be different between RNA and ATAC assay. The rest part of barcode (R1.xx,R2.xx,R3.xx) would be the same for ATAC and RNA library.
+Depending on the downstream analysis pipeline, sometimes the comma in the barcode would be converted to period (R1.xx,R2.xx,R3.xx,P1.xx --> R1.xx.R2.xx.R3.xx.P1.xx).
+A barcode translation table indicating the P1.xx used in the assay would be beneficial, when submitting data to GEO.
+
 # Installation
 This pipeline requires following packages to be properly installed and added to system path: GNU parallel, Bcl2fastq, fastp, zcat, STAR, bowtie2, python2, umi_tools, samtools, picard, R, featureCounts, read_distribution.py from RSeQC, bedtools
 
@@ -81,11 +87,6 @@ Several QC plots will be generated.\
 For ATAC, the most important files are the fragment file after removing duplicates and mito reads (.rmdup.cutoff.bed.gz) and a summarize report (.counts.csv.gz).\
 For RNA, the most important files are UMIxCell matrix (.UMIcounts.csv.gz) and a summarize report (.counts.csv.gz).\
 This pipeline currently keeps many intermedia files. If preferred, they can be manually removed afterwards.
-
-# Important note
-The ATAC and RNA barcodes would in the format of R1.xx,R2.xx,R3.xx,P1.xx, where xx is in the range of 01-96.
-The P1.xx indicates the primers that were used to amplify each ATAC and RNA sub-libraries. It is expected to be different between RNA and ATAC assay. The rest part of barcode (R1.xx,R2.xx,R3.xx) would be the same for ATAC and RNA library.
-A barcode translation table indicating the P1.xx used in the assay would be beneficial.
 
 # Cite us
 For more details, please refer to [Ma et al. Chromatin Potential Identified by Shared Single-Cell Profiling of RNA and Chromatin, Cell 2020](https://www.sciencedirect.com/science/article/pii/S0092867420312538)
