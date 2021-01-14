@@ -88,5 +88,9 @@ For ATAC, the most important files are the fragment file after removing duplicat
 For RNA, the most important files are UMIxCell matrix (.UMIcounts.csv.gz) and a summarize report (.counts.csv.gz).\
 This pipeline currently keeps many intermedia files. If preferred, they can be manually removed afterwards.
 
+# Read data example
+Public SHARE-seq datasets are available at [GEO].(https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE140203)\
+A set of fastq files for species mixing experiment can be downloaded [here].(https://drive.google.com/drive/folders/19HdjJuWrpRJz8OeB6YNUMSojPyTMV7OP?usp=sharing)\
+
 # Cite us
 For more details, please refer to [Ma et al. Chromatin Potential Identified by Shared Single-Cell Profiling of RNA and Chromatin, Cell 2020](https://www.sciencedirect.com/science/article/pii/S0092867420312538)
