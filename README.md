@@ -1,3 +1,9 @@
+<html>
+  <head>
+    <meta name="google-site-verification" content="FC8xEq44yQepn6GHyTtgwE8snz8H4lnnfgcJE16CIHY" />
+  </head>
+</html>
+
 # SHARE-seq-alignment v1.0
 Pipeline for demultiplexing and aligning both ATAC and RNA data generated in SHARE-seq\
 **Author: Sai Ma. sai@broadinstitute.org**
