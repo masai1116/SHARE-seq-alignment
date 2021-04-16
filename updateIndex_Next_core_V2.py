@@ -1,4 +1,4 @@
-# Python 3.6
+# Python 2.7
 '''
 # Author: Sai Ma
 # Date: 04/02/2018
