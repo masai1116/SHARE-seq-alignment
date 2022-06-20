@@ -6,6 +6,8 @@
 
 # SHARE-seq-alignment v1.0
 Pipeline for demultiplexing and aligning both ATAC and RNA data generated in SHARE-seq\
+The pipeline is updated to a newer version. Please refer to V2 for future usage.\
+[https://github.com/masai1116/SHARE-seq-alignmentV2/](https://github.com/masai1116/SHARE-seq-alignmentV2/)
 **Author: Sai Ma. sai@broadinstitute.org**
 
 # Important note
